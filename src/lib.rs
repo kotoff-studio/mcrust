@@ -2,8 +2,6 @@ use std::fs::File;
 use std::io::prelude::*;
 use std::process::Command;
 
-isLoaded = false;
-
 struct WelcomeMessage;
 impl WelcomeMessage {
 
@@ -15,7 +13,9 @@ impl WelcomeMessage {
     }
 
     fn onEnable() {
+        let mut isLoaded = false;
         println!("[+] Enabled, starting . . .");
+        isLoaded = true;
         Self::join();
     }
 
@@ -26,6 +26,5 @@ impl WelcomeMessage {
 
 fn main() {
     WelcomeMessage::onEnable();
-    isLoaded = true;
     println!("[+] Started!");
 }
