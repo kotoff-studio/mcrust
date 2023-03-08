@@ -1,5 +1,6 @@
 # mcrust
-Minecraft plugin example using Rust
+Minecraft plugin example using Rust.
+This plugin writes *simple welcome message* when you join the server
 
 ## How to use
 1. Compile using `cargo build --release`
