@@ -2,6 +2,8 @@ use std::fs::File;
 use std::io::prelude::*;
 use std::process::Command;
 
+isLoaded = false;
+
 struct WelcomeMessage;
 impl WelcomeMessage {
 
@@ -24,5 +26,6 @@ impl WelcomeMessage {
 
 fn main() {
     WelcomeMessage::onEnable();
+    isLoaded = true;
     println!("[+] Started!");
 }
