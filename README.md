@@ -20,3 +20,19 @@ This plugin writes *simple welcome message* when you join the server
 }
 ```
 5. Place **libconf.json** in the **libmcrust.rlib** dir
+6. *(NEW)* ⚠️ If you're planning to use it on Purpur, download updated sources, compile and change **libconf.json** to:
+```json
+{
+    "libs": {
+        "libmcrust.rlib": {
+            "name": "MCRust",
+            "execute-class": "WelcomeMessage",
+            "main-func": true,
+            "imports-list": 0,
+            "entry-point": "main",
+            "load-var": "isLoaded",
+            "default-val-of-load-var": false
+        }
+    }
+}
+```
