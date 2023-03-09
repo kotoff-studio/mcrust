@@ -12,11 +12,24 @@ impl WelcomeMessage {
             .output();
     }
 
+    fn registerCommand(command: str, perm: str) {
+        Command::new("?ev?_commandSetExecutor_ZN12CommandExecutor4registerCv")
+            .args([command, perm])
+            .output();
+    }
+
+    fn testCommand() {
+        let mut for_show = "%cmd_executor%";
+        Self::registerCommand("/testcmd", "minecraft.tp"); // first of all - registering our command
+        Command::new("?es?_sendMessage_ZN15ObjectMessageSend4initCc")
+        .args(["{#00ff00} Hello", for_show])
+        .output();
+    }
+
     fn onEnable() {
-        let mut isLoaded = false;
         println!("[+] Enabled, starting . . .");
-        isLoaded = true;
         Self::join();
+        Self::testCommand();
     }
 
     fn onDisable() {
