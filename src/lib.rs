@@ -12,7 +12,7 @@ impl WelcomeMessage {
             .output();
     }
 
-    fn registerCommand(command: str, perm: str) {
+    fn registerCommand(command: &str, perm: &str) {
         Command::new("?ev?_commandSetExecutor_ZN12CommandExecutor4registerCv")
             .args([command, perm])
             .output();
